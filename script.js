@@ -1,19 +1,21 @@
 const header = document.querySelector("header")
 const banner = document.querySelector(".img")
 const links = document.querySelectorAll("nav a")
+const toggleBtn = document.querySelector(".toggle-btn")
 
-links.forEach(link => {
-    if (window.location.href = link.href) {
-        link.parentElement.classList.add("active")
-    } else {
-        link.parentElement.classList.remove("active")
-    }
+let querySize = window.matchMedia("(max-width: 1024px)")
+
+toggleBtn.addEventListener("click", () => {
+    toggleBtn.classList.toggle("open")
+    console.log("clicked")
 })
+
+
 
 window.addEventListener("scroll", () => {
     const winScroll = window.scrollY;
 
-    banner.style.backgroundPosition = `right ${(winScroll * .25)}px`
+    banner.style.backgroundPosition = `center ${(winScroll * .25)}px`
 
 })
 
@@ -42,19 +44,3 @@ headerIntersect.observe(banner)
 
 const myForm = document.getElementById("myForm")
 const inpFile = document.getElementById("inpFile")
-
-myForm.addEventListener("submit", e => {
-    e.preventDefault()
-
-    const endpoint = 'upload.php'
-    const formData = new FormData()
-
-
-    formData.append("inpFile", inpFile.files[0])
-
-    fetch(endpoint, {
-        method: "post",
-        body: formData
-    }).catch(console.error)
-
-})
