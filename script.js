@@ -2,12 +2,25 @@ const header = document.querySelector("header")
 const banner = document.querySelector(".img")
 const links = document.querySelectorAll("nav a")
 const toggleBtn = document.querySelector(".toggle-btn")
+const navigation = document.querySelector("header nav")
+
 
 let querySize = window.matchMedia("(max-width: 1024px)")
 
 toggleBtn.addEventListener("click", () => {
     toggleBtn.classList.toggle("open")
-    console.log("clicked")
+    navigation.classList.toggle("open")
+
+    
+    
+})
+
+links.forEach(link => {
+    link.addEventListener("click", () => {
+        navigation.classList.remove("open")
+        toggleBtn.classList.remove("open")
+
+    })
 })
 
 
@@ -42,5 +55,25 @@ const headerIntersect = new IntersectionObserver(function(entries, headerInterse
 
 headerIntersect.observe(banner)
 
-const myForm = document.getElementById("myForm")
-const inpFile = document.getElementById("inpFile")
+
+const containerOptions = {
+    Root: "",
+    threshold: .5,
+    rootMargin: "0px 0px 0px 0px"
+}
+
+const containerObserver = new IntersectionObserver((entries, containerObserver) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.classList.add("active")
+        }
+        console.log(entry.target)
+        // containerObserver.unobserve(entry.target)
+    })
+}, containerOptions)
+
+const introItems = document.querySelectorAll(".intro > *")
+
+introItems.forEach(item => {
+    containerObserver.observe(item)
+})

@@ -82,6 +82,7 @@ header .logo {
 
 header nav {
     display: flex;
+    overflow-x: hidden;
 }
 
 nav ul  {
@@ -156,7 +157,11 @@ nav li a:focus {
     background-color: #fff;
     height: 2px;
 
-    transition: width 150ms ease-in;
+    transition: width 150ms ease-in, background-color 150ms ease-in;
+}
+
+.toggle-btn.open .toggle span {
+    background-color: #000;
 }
 
 .toggle-btn.open .toggle span:nth-child(1) {
@@ -201,6 +206,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 120px;
+    overflow: hidden;
 }
 
 .intro {
@@ -212,12 +218,22 @@ main {
 
 .container .intro img {
     width: calc(50% - 80px);
+    transform: translateX(-50%);
 }
 
 .container .intro p {
     font-size: 1.5em;
     line-height: 2.5rem;
     width: calc(50% - 80px);
+    transform: translateX(50%);
+}
+
+.container .intro img.active {
+    transform: translateX(0);
+}
+
+.container .intro p.active {
+    transform: translateX(0);
 }
 
 .section-two {
@@ -413,9 +429,8 @@ footer .top-section {
 }
 
 .top-section a .socials {
-    width: 120px;
-    height: 120px;
-    padding: 10px;
+    padding: .5vw;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -433,7 +448,7 @@ footer .top-section {
 }
 
 .socials i {
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 footer .copyright {
@@ -456,13 +471,19 @@ footer .copyright {
 @media (max-width: 768px) {
     header nav {
         position: absolute;
-        top: 100%;
+        top: 0;
         left: 0;
         width: 100%;
-        height: calc(100vh - 63px);
+        height: 100vh;
         background-color: var(--secondary-clr);
         display: flex;
         justify-content: center;
+        transform: translateX(100%);
+
+        transition: transform 150ms ease-in;
+    }
+    header nav.open {
+        transform: translateX(0);
     }
     nav ul {
         flex-direction: column;
@@ -470,10 +491,18 @@ footer .copyright {
     }
 
     nav li {
-
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 0.8vw 2vw;
     }
 
+    nav li:hover {
+        background-color: var(--primary-clr);
+    }
     nav li a {
+        color: #000;
+    }
+    header.active nav a {
         color: #000;
     }
     nav li a:after {
@@ -483,12 +512,17 @@ footer .copyright {
         display: flex;
         width: 9vw;
         height: 9vw;
+        z-index: 999;
     }
 }
 
 @media (max-width: 540px) {
     html {
         font-size: .9em;
+    }
+    .toggle-btn {
+        width: 11.5vw;
+        height: 11.5vw;
     }
     .container .intro img {
         width: 100%;
@@ -524,3 +558,16 @@ footer .copyright {
         font-size: 80%;
     } 
 }
+
+@media (max-width: 376px) {
+    .logoImg#landingText h1 {
+        font-size: 12vw;
+    }
+}
+
+@media (max-width: 320px) {
+    .logoImg h1 {
+        font-size: 10vw;
+    }
+}
+    
