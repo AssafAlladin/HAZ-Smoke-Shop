@@ -329,6 +329,24 @@ main {
     width: 100%;
 }
 
+.map .directions {
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    align-items: center;
+    gap: .7vw;
+}
+
+.map .directions::after {
+    content: '\f061';
+    font-family: FontAwesome;
+}
+
+.map .directions:hover,
+.map .directions:focus {
+    color: var(--primary-clr);
+}
+
 .upload {
     display: flex;
     flex-direction: column;
