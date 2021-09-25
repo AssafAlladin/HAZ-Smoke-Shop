@@ -3,6 +3,13 @@ const banner = document.querySelector(".img")
 const links = document.querySelectorAll("nav a")
 const toggleBtn = document.querySelector(".toggle-btn")
 const navigation = document.querySelector("header nav")
+const navList = document.querySelectorAll("nav li a");
+
+navList.forEach(nav => {
+    if (window.location.href == nav.href) {
+        nav.parentElement.classList.add("active")
+    }
+})
 
 
 let querySize = window.matchMedia("(max-width: 1024px)")
@@ -57,23 +64,104 @@ headerIntersect.observe(banner)
 
 
 const containerOptions = {
-    Root: "",
-    threshold: .5,
-    rootMargin: "0px 0px 0px 0px"
+    rootMargin: "0px 0px -100px 0px"
 }
 
 const containerObserver = new IntersectionObserver((entries, containerObserver) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.classList.add("active")
+        if (!entry.isIntersecting) {
+            return
+        } else {
+            entry.target.classList.add("active")
         }
-        console.log(entry.target)
-        // containerObserver.unobserve(entry.target)
+        containerObserver.unobserve(entry.target)
     })
 }, containerOptions)
 
 const introItems = document.querySelectorAll(".intro > *")
+const tiles = document.querySelectorAll(".tiles .tile")
+const map = document.querySelector(".map")
+const galleryImages = document.querySelectorAll(".img-grid")
+const modal = document.querySelector(".modal")
+
 
 introItems.forEach(item => {
     containerObserver.observe(item)
 })
+
+tiles.forEach(tile => {
+    containerObserver.observe(tile)
+})
+
+
+if (window.location.href.includes("index.html")) {
+    containerObserver.observe(map)
+}
+
+const leftBtn = document.querySelector(".icon.left")
+const rightBtn = document.querySelector(".icon.right")
+
+galleryImages.forEach((img, index) => {
+    containerObserver.observe(img)
+    img.addEventListener("click", () => {
+
+        document.body.style.overflow = "hidden"
+        
+        modal.classList.add("active")
+
+        var newImg = document.createElement("img")
+        
+        newImg.classList.add("newImg")
+
+        var modalImg = modal.appendChild(newImg)
+
+        modalImg.src = galleryImages[index].querySelector("img").src
+    })
+
+    leftBtn.addEventListener("click", () => {
+
+        index--
+
+        var modalImg = document.querySelector(".newImg")
+
+        modalImg.src = galleryImages[index].querySelector("img").src
+
+
+    })
+
+    rightBtn.addEventListener("click", () => {
+
+
+        index++
+
+        const modalImg = document.querySelector(".newImg")
+
+        modalImg.src = galleryImages[index].querySelector("img").src
+
+    })
+})
+
+const exit = document.querySelector(".exit")
+
+exit.addEventListener("click", () => {
+    modal.classList.remove("active")
+    document.body.style.overflow = "scroll"
+    modal.querySelector("img").remove();
+
+})
+
+modal.addEventListener("click", e => {
+
+    var target = e.target
+
+    console.log(target.className)
+
+    if (target.className.includes("modal")) {
+        modal.classList.remove("active")
+        document.body.style.overflow = "scroll"
+        modal.querySelector("img").remove();
+    }
+})
+
+
+
