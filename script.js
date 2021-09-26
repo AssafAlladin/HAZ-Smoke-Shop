@@ -12,14 +12,9 @@ navList.forEach(nav => {
 })
 
 
-let querySize = window.matchMedia("(max-width: 1024px)")
-
 toggleBtn.addEventListener("click", () => {
     toggleBtn.classList.toggle("open")
     navigation.classList.toggle("open")
-
-    
-    
 })
 
 links.forEach(link => {
@@ -93,8 +88,7 @@ tiles.forEach(tile => {
     containerObserver.observe(tile)
 })
 
-
-containerObserver.observe(map)
+    containerObserver.observe(map)
 
 const leftBtn = document.querySelector(".icon.left")
 const rightBtn = document.querySelector(".icon.right")

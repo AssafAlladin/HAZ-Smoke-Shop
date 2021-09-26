@@ -11,17 +11,22 @@
 
 <?php
 
-// set up variables to store all user input
-$title = $_POST['title'];
-$firstName = $_POST['firstName'];
-$lastName = $_POST['lastName'];
-$comment = $_POST['comment'];
 
 $output = "";
 
-
 // additional business process: send a notification email to the admin
 if(array_key_exists('submit', $_POST)) {
+
+    // set up variables to store all user input
+    $title = $_POST['title'];
+    $firstName = $_POST['firstName'];
+    $lastName = $_POST['lastName'];
+    $comment = $_POST['comment'];
+
+    
+
+
+
     $to="alladin.assaf@yahoo.com"; // change this to your own email address
     $subject="$title";
     $header="From: " . $firstName . $lastName;
