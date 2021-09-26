@@ -60,6 +60,14 @@ if(array_key_exists('submit', $_POST)) {
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="hookah, vapes, disposables, bongs, grinders">
+    <meta name="description" content="Welcome to Haz smoke & vape where you can find all smoking products new and old.">
+    <meta name="author" content="HAZ">
+    <meta property="og:site_name" content="SMOKE&VAPE">
+    <meta property="og:url" content="www.smmokeandvape.store">
+    <meta property="og:title" content="Looking for smoking products, come to Smoke & Vape">
+    <meta property="og:description" content="Come look threw our wide variety of new and old smoking products. We are located at 5415 S Cooper St suite 101, Arlington, TX 76017">
+    <meta property="og:image" content="./images/storeFront-3.JPG">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/c3e21ab8d5.js" crossorigin="anonymous"></script>
@@ -121,7 +129,7 @@ if(array_key_exists('submit', $_POST)) {
             <div class="map">
                 <h2>Visit Us:</h2>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3359.007107764125!2d-97.13203899999999!3d32.659255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864e6301052a5755%3A0x9b9b08dbec6dbfd5!2sHAZ%20SMOKE%20%26%20VAPE!5e0!3m2!1sen!2sus!4v1632080623457!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                <a class="directions" href="https://www.google.com/maps/dir//HAZ+SMOKE+%26+VAPE,+5415+S+Cooper+St+suite+101,+Arlington,+TX+76017/@32.6591427,-97.134229,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x864e6301052a5755:0x9b9b08dbec6dbfd5!2m2!1d-97.1320403!2d32.6591375">Get Directions</a>
+                <a class="directions" href="https://www.google.com/maps/dir//HAZ+SMOKE+%26+VAPE,+5415+S+Cooper+St+suite+101,+Arlington,+TX+76017/@32.6591427,-97.134229,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x864e6301052a5755:0x9b9b08dbec6dbfd5!2m2!1d-97.1320403!2d32.6591375" target="_blank">Get Directions</a>
             </div>
         </div>
         <div class="form" id="contact">

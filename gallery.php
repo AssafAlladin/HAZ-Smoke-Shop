@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="hookah, vapes, disposables, bongs, grinders">
+    <meta name="description" content="Welcome to Haz smoke & vape where you can find all smoking products new and old.">
+    <meta name="author" content="HAZ">
+    <meta property="og:site_name" content="SMOKE&VAPE">
+    <meta property="og:url" content="www.smmokeandvape.store">
+    <meta property="og:title" content="Looking for smoking products, come to Smoke & Vape">
+    <meta property="og:description" content="Come look threw our wide variety of new and old smoking products. We are located at 5415 S Cooper St suite 101, Arlington, TX 76017">
+    <meta property="og:image" content="./images/storeFront-3.JPG">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/c3e21ab8d5.js" crossorigin="anonymous"></script>

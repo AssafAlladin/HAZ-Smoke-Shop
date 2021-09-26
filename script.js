@@ -59,7 +59,7 @@ headerIntersect.observe(banner)
 
 
 const containerOptions = {
-    rootMargin: "0px 0px -100px 0px"
+    rootMargin: "0px 0px -50px 0px"
 }
 
 const containerObserver = new IntersectionObserver((entries, containerObserver) => {
@@ -88,7 +88,9 @@ tiles.forEach(tile => {
     containerObserver.observe(tile)
 })
 
+if(!window.location.href.includes("gallery.php")) {
     containerObserver.observe(map)
+}
 
 const leftBtn = document.querySelector(".icon.left")
 const rightBtn = document.querySelector(".icon.right")
