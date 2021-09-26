@@ -94,9 +94,7 @@ tiles.forEach(tile => {
 })
 
 
-if (window.location.href.includes("index.html")) {
-    containerObserver.observe(map)
-}
+containerObserver.observe(map)
 
 const leftBtn = document.querySelector(".icon.left")
 const rightBtn = document.querySelector(".icon.right")

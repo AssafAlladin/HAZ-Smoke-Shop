@@ -12,7 +12,7 @@
 <body>
     <header>
         <div class="logo">
-            <a href="index.html">
+            <a href="index.php">
                 <div class="logoImg">
                     <h1><span>Smoke</span>&nbsp;<span>&</span>&nbsp;<span>Vape</span></h1>
                 </div>
@@ -20,9 +20,9 @@
         </div>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="gallery.php">Gallery</a></li>
+                <li><a href="index.php#contact">Contact</a></li>
             </ul>
         </nav>
         <div class="toggle-btn">

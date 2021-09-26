@@ -1,21 +1,168 @@
+
+<script>
+        const form = document.querySelector("#contact form");
+
+        form.addEventListener("submit", e => {
+
+            e.preventDefault();
+
+        })
+</script>
+
+<?php
+
+// set up variables to store all user input
+$title = $_POST['title'];
+$firstName = $_POST['firstName'];
+$lastName = $_POST['lastName'];
+$comment = $_POST['comment'];
+
+$output = "";
+
+
+// additional business process: send a notification email to the admin
+if(array_key_exists('submit', $_POST)) {
+    $to="alladin.assaf@yahoo.com"; // change this to your own email address
+    $subject="$title";
+    $header="From: " . $firstName . $lastName;
+    $submissionTime = date("F j, Y, g:i a");
+    $message="
+        $comment\n\n
+        The following comment was added on $submissionTime
+        "; 
+
+    // try setting $message = $output; and see what you receive in the email
+
+    $mailSent = mail($to,$subject,$message);
+
+    if ($mailSent) {
+        
+        $emailResultMessage =  "<p class='success' >Your comment was recieved, we will reach back to you in a moment";
+            
+    } else {
+        $emailResultMessage = "<p class='error'>Something went wrong with our email system.  We are not able to send the email at this moment, sorry.";
+    }
+
+    // add $emailResultMessage to the comment preview table as the final output
+    $output = $emailResultMessage;
+
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c3e21ab8d5.js" crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
+    <title>Haz Smoke & Vape</title>
 </head>
 <body>
-    
-
-    <p>This is a paragraph</p>
-
-    <?php 
-        echo "<p>This is also a paragraph?</p>";
-    ?>
-
-    <p>This is a paragraph</p>
-
+    <header>
+        <div class="logo">
+            <a href="index.php">
+                <div class="logoImg">
+                    <h1><span>Smoke</span>&nbsp;<span>&</span>&nbsp;<span>Vape</span></h1>
+                </div>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="gallery.php">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="toggle-btn">
+            <div class="toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+    <div class="img">
+        <div class="logoImg" id="landingText">
+            <h1><span>Smoke</span>&nbsp;<span>&</span>&nbsp;<span>Vape</span></h1>
+        </div>
+    </div>
+    <main>
+        <div class="container">
+            <div class="intro">
+                <img src="./images/insideStore-1.JPG" alt="Inside Store">
+                <p>Smoke & Vape is a tabacco store in Arlington, TX that has a wide variety of items at a great cost. We here like to treat our customers not just as customers but as family.</p>
+            </div>
+            <div class="section-two">
+                <h2>Best sellers:</h2>
+                <div class="tiles">
+                    <div class="tile">
+                        <img src="./images/vapes.JPG" alt="Vapes">
+                        <p>Vapes</p>   
+                    </div>
+                    <div class="tile">
+                        <img src="./images/vapeShelf-1.JPG" alt="Vapes">
+                        <p>Disposables</p> 
+                    </div>
+                    <div class="tile">
+                        <img src="./images/IMG_1966.JPG" alt="Vapes">
+                        <p>Pipes</p> 
+                    </div>
+                </div>
+            </div>
+            <div class="map">
+                <h2>Visit Us:</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3359.007107764125!2d-97.13203899999999!3d32.659255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864e6301052a5755%3A0x9b9b08dbec6dbfd5!2sHAZ%20SMOKE%20%26%20VAPE!5e0!3m2!1sen!2sus!4v1632080623457!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <a class="directions" href="https://www.google.com/maps/dir//HAZ+SMOKE+%26+VAPE,+5415+S+Cooper+St+suite+101,+Arlington,+TX+76017/@32.6591427,-97.134229,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x864e6301052a5755:0x9b9b08dbec6dbfd5!2m2!1d-97.1320403!2d32.6591375">Get Directions</a>
+            </div>
+        </div>
+        <div class="form" id="contact">
+            <h1>Feel free to write us:</h1>
+            <form action="" method="post">
+                    <div class="contact">
+                        <div class="input-field">
+                            <label for="title">Title:</label>
+                            <input type="text" name="title" id="title">
+                        </div>
+                        <div class="input-field">
+                            <label for="firstName">First Name:</label>
+                            <input type="text" name="firstName" id="firstName">
+                        </div>
+                        <div class="input-field">
+                            <label for="lastName">Last Name:</label>
+                            <input type="text" name="lastName" id="lastName">
+                        </div>
+                        <div class="input-field">
+                            <label for="textArea">Comments:</label>
+                            <textarea name="comment" id="textArea" cols="30" rows="10"></textarea>
+                        </div>
+                        <input type="submit" value="Send" id="submit" name="submit">
+                        <div class="response">
+                            <?php echo $output ?>
+                        </div>
+                    </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div class="top-section">
+            <div class="address">
+                <p>5415 S Cooper St suit 101, Arlington, TX 76017</p>
+                <p>682-313-4203</p>
+                <p>hazim.assaf@yahoo.com</p>
+            </div>
+            <a href="https://www.instagram.com/haz.smokevape/">
+                <div class="socials">
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </a>
+        </div>
+        <div class="copyright">
+            <p>HAZ Smoke & Vape &copy; <script>document.write(new Date().getFullYear())</script></p>
+        </div>
+    </footer>
 </body>
 </html>
