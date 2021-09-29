@@ -98,7 +98,7 @@ if(array_key_exists('submit', $_POST)) {
     <main>
         <div class="container">
             <div class="intro">
-                <img src="./images/insideStore-1.JPG" alt="Inside Store">
+                <img src="./images/straight-inStore.jpg" alt="Inside Store">
                 <p>Smoke & Vape is a tabacco store in Arlington, TX that has a wide variety of items at a great cost. We here like to treat our customers not just as customers but as family.</p>
             </div>
             <div class="section-two">
