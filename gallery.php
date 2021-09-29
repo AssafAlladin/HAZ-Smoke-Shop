@@ -94,12 +94,6 @@
                 </div>
             </div>
             <div class="modal">
-                <div class="icon left">
-                    <i class="fas fa-chevron-left"></i>
-                </div>
-                <div class="icon right">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
                 <div class="exit">
                     <i class="fas fa-times"></i>
                 </div>

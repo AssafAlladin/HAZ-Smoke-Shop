@@ -92,8 +92,6 @@ if(!window.location.href.includes("gallery.php")) {
     containerObserver.observe(map)
 }
 
-const leftBtn = document.querySelector(".icon.left")
-const rightBtn = document.querySelector(".icon.right")
 
 galleryImages.forEach((img, index) => {
     containerObserver.observe(img)
@@ -110,28 +108,6 @@ galleryImages.forEach((img, index) => {
         var modalImg = modal.appendChild(newImg)
 
         modalImg.src = galleryImages[index].querySelector("img").src
-    })
-
-    leftBtn.addEventListener("click", () => {
-
-        index--
-
-        var modalImg = document.querySelector(".newImg")
-
-        modalImg.src = galleryImages[index].querySelector("img").src
-
-
-    })
-
-    rightBtn.addEventListener("click", () => {
-
-
-        index++
-
-        const modalImg = document.querySelector(".newImg")
-
-        modalImg.src = galleryImages[index].querySelector("img").src
-
     })
 })
 

@@ -1,14 +1,4 @@
 
-<script>
-        const form = document.querySelector("#contact form");
-
-        form.addEventListener("submit", e => {
-
-            e.preventDefault();
-
-        })
-</script>
-
 <?php
 
 
@@ -21,18 +11,20 @@ if(array_key_exists('submit', $_POST)) {
     $title = $_POST['title'];
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
+    $email = $_POST['email'];
     $comment = $_POST['comment'];
 
     
 
 
 
-    $to="alladin.assaf@yahoo.com"; // change this to your own email address
+    $to="hazim.assaf@yahoo.com"; // change this to your own email address
     $subject="$title";
-    $header="From: " . $firstName . $lastName;
+    $header="From: $firstName . $lastName " ;
     $submissionTime = date("F j, Y, g:i a");
     $message="
         $comment\n\n
+        My Email: $email\n\n
         The following comment was added on $submissionTime
         "; 
 
@@ -132,7 +124,8 @@ if(array_key_exists('submit', $_POST)) {
                 <a class="directions" href="https://www.google.com/maps/dir//HAZ+SMOKE+%26+VAPE,+5415+S+Cooper+St+suite+101,+Arlington,+TX+76017/@32.6591427,-97.134229,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x864e6301052a5755:0x9b9b08dbec6dbfd5!2m2!1d-97.1320403!2d32.6591375" target="_blank">Get Directions</a>
             </div>
         </div>
-        <div class="form" id="contact">
+    </main>
+    <div class="form" id="contact">
             <h1>Feel free to write us:</h1>
             <form action="" method="post">
                     <div class="contact">
@@ -143,6 +136,10 @@ if(array_key_exists('submit', $_POST)) {
                         <div class="input-field">
                             <label for="firstName">First Name:</label>
                             <input type="text" name="firstName" id="firstName">
+                        </div>
+                        <div class="input-field">
+                            <label for="email">Email:</label>
+                            <input type="text" name="email" id="email">
                         </div>
                         <div class="input-field">
                             <label for="lastName">Last Name:</label>
@@ -159,7 +156,6 @@ if(array_key_exists('submit', $_POST)) {
                     </div>
             </form>
         </div>
-    </main>
     <footer>
         <div class="top-section">
             <div class="address">

@@ -335,16 +335,14 @@ main {
     display: flex;
     align-items: center;
     gap: .7vw;
+    padding: 10px;
+    background-color: var(--primary-clr);
+    width: 220px;
 }
 
 .map .directions::after {
     content: '\f061';
     font-family: FontAwesome;
-}
-
-.map .directions:hover,
-.map .directions:focus {
-    color: var(--primary-clr);
 }
 
 .form {
@@ -398,6 +396,7 @@ form .contact {
     background-color: var(--secondary-clr);
     border: none;
     outline: none;
+    -webkit-appearance: button;
 
     transition: background-color 100ms ease-in;
 }
