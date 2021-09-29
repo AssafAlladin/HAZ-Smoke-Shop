@@ -109,11 +109,11 @@ if(array_key_exists('submit', $_POST)) {
                         <p>Vapes</p>   
                     </div>
                     <div class="tile">
-                        <img src="./images/vapeShelf-1.JPG" alt="Vapes">
+                        <img src="./images/disposables.JPG" alt="Disposables">
                         <p>Disposables</p> 
                     </div>
                     <div class="tile">
-                        <img src="./images/IMG_1966.JPG" alt="Vapes">
+                        <img src="./images/pipes.JPG" alt="pipes">
                         <p>Pipes</p> 
                     </div>
                 </div>
