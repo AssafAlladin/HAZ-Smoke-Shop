@@ -346,7 +346,7 @@ main {
 }
 
 .form {
-    background-color: hsl(0, 0%, 30%);
+    background-color: hsl(0, 0%, 20%);
     padding: 20px 0;
     margin-top: 220px;
     display: flex;
@@ -362,6 +362,7 @@ main {
     width: 370px;
     margin: auto;
     border-radius: 5px;
+    background-color: hsl(0, 0%, 40%);
 }
 
 form .contact {
@@ -379,20 +380,20 @@ form .contact {
 
 .input-field input {
     height: 32px;
-    background-color: hsl(0, 0%, 50%);
+    background-color: hsl(0, 0%, 80%);
     border: none;
     outline: none;
 } 
 
 .input-field textarea {
-    background-color: hsl(0, 0%, 50%);
+    background-color: hsl(0, 0%, 80%);
     border: none;
     outline: none;
 }
 
 .contact #submit {
     height: 32px;
-    background-color: hsl(0, 0%, 50%);
+    background-color: hsl(0, 0%, 80%);
     border: none;
     outline: none;
     -webkit-appearance: button;
@@ -463,14 +464,6 @@ form .contact {
     font-size: 2.5rem;
     color: #ccc;
 
-}
-
-.icon.left {
-    left: 3vw;
-}
-
-.icon.right {
-    right: 3vw;
 }
 
 .exit {
