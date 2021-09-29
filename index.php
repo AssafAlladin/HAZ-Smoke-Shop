@@ -18,9 +18,9 @@ if(array_key_exists('submit', $_POST)) {
 
 
 
-    $to="hazim.assaf@yahoo.com"; // change this to your own email address
+    $to="alladin.assaf@yahoo.com"; // change this to your own email address
     $subject="$title";
-    $header="From: $firstName . $lastName " ;
+    $header="From: $firstName" . "$lastName " ;
     $submissionTime = date("F j, Y, g:i a");
     $message="
         $comment\n\n
@@ -30,7 +30,7 @@ if(array_key_exists('submit', $_POST)) {
 
     // try setting $message = $output; and see what you receive in the email
 
-    $mailSent = mail($to,$subject,$message);
+    $mailSent = mail($to,$subject,$message, $header);
 
     if ($mailSent) {
         
@@ -138,12 +138,12 @@ if(array_key_exists('submit', $_POST)) {
                             <input type="text" name="firstName" id="firstName">
                         </div>
                         <div class="input-field">
-                            <label for="email">Email:</label>
-                            <input type="text" name="email" id="email">
-                        </div>
-                        <div class="input-field">
                             <label for="lastName">Last Name:</label>
                             <input type="text" name="lastName" id="lastName">
+                        </div>
+                        <div class="input-field">
+                            <label for="email">Email:</label>
+                            <input type="text" name="email" id="email">
                         </div>
                         <div class="input-field">
                             <label for="textArea">Comments:</label>

@@ -337,7 +337,7 @@ main {
     gap: .7vw;
     padding: 10px;
     background-color: var(--primary-clr);
-    width: 220px;
+    width: max-content;
 }
 
 .map .directions::after {
@@ -346,7 +346,7 @@ main {
 }
 
 .form {
-    background-color: hsl(133, 53%, 37%);
+    background-color: hsl(0, 0%, 30%);
     padding: 20px 0;
     margin-top: 220px;
     display: flex;
@@ -361,7 +361,6 @@ main {
 .form form {
     width: 370px;
     margin: auto;
-    background-color: hsl(133, 53%, 57%);
     border-radius: 5px;
 }
 
@@ -380,20 +379,20 @@ form .contact {
 
 .input-field input {
     height: 32px;
-    background-color: var(--secondary-clr);
+    background-color: hsl(0, 0%, 50%);
     border: none;
     outline: none;
 } 
 
 .input-field textarea {
-    background-color: var(--secondary-clr);
+    background-color: hsl(0, 0%, 50%);
     border: none;
     outline: none;
 }
 
 .contact #submit {
     height: 32px;
-    background-color: var(--secondary-clr);
+    background-color: hsl(0, 0%, 50%);
     border: none;
     outline: none;
     -webkit-appearance: button;
