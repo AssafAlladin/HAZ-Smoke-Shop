@@ -626,6 +626,18 @@ footer .copyright {
     } 
 }
 
+@media (min-width: 1500px) {
+    html {
+        font-size: 1.5em;
+    }
+}
+
+@media (min-width: 1200px) {
+    html {
+        font-size: 1.2em;
+    }
+}
+
 @media (max-width: 376px) {
     .logoImg#landingText h1 {
         font-size: 12vw;
