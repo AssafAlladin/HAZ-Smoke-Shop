@@ -18,7 +18,7 @@ if(array_key_exists('submit', $_POST)) {
 
 
 
-    $to="alladin.assaf@yahoo.com"; // change this to your own email address
+    $to="hazim.assaf@yahoo.com"; // change this to your own email address
     $subject="$title";
     $header="From: $firstName" . "$lastName " ;
     $submissionTime = date("F j, Y, g:i a");
@@ -131,23 +131,23 @@ if(array_key_exists('submit', $_POST)) {
                     <div class="contact">
                         <div class="input-field">
                             <label for="title">Title:</label>
-                            <input type="text" name="title" id="title">
+                            <input type="text" name="title" id="title" required>
                         </div>
                         <div class="input-field">
                             <label for="firstName">First Name:</label>
-                            <input type="text" name="firstName" id="firstName">
+                            <input type="text" name="firstName" id="firstName" required>
                         </div>
                         <div class="input-field">
                             <label for="lastName">Last Name:</label>
-                            <input type="text" name="lastName" id="lastName">
+                            <input type="text" name="lastName" id="lastName" required>
                         </div>
                         <div class="input-field">
                             <label for="email">Email:</label>
-                            <input type="text" name="email" id="email">
+                            <input type="text" name="email" id="email" required>
                         </div>
                         <div class="input-field">
                             <label for="textArea">Comments:</label>
-                            <textarea name="comment" id="textArea" cols="30" rows="10"></textarea>
+                            <textarea name="comment" id="textArea" cols="30" rows="10" required></textarea>
                         </div>
                         <input type="submit" value="Send" id="submit" name="submit">
                         <div class="response">
