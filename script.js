@@ -5,6 +5,8 @@ const toggleBtn = document.querySelector(".toggle-btn")
 const navigation = document.querySelector("header nav")
 const navList = document.querySelectorAll("nav li a");
 
+
+
 navList.forEach(nav => {
     if (window.location.href == nav.href) {
         nav.parentElement.classList.add("active")
