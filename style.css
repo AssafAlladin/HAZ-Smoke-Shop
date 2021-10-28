@@ -176,7 +176,7 @@ header.active nav li a::after {
     height: 100vh;
     background: url(./images/storeFront-3.JPG);
     background-repeat: no-repeat;
-    background-size: 1300px;
+    background-size: cover;
     background-position: center top;
     display: flex;
     justify-content: center;
