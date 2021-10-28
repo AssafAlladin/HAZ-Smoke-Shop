@@ -163,7 +163,7 @@ if(array_key_exists('submit', $_POST)) {
                 <p>682-313-4203</p>
                 <p>hazim.assaf@yahoo.com</p>
             </div>
-            <a href="https://www.instagram.com/haz.smokevape/">
+            <a href="https://www.instagram.com/haz.smokevape/" target= "_blank">
                 <div class="socials">
                     <i class="fab fa-instagram"></i>
                 </div>

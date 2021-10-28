@@ -40,7 +40,7 @@ header {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 10px 15px;
+    padding: 10px 5vw;
     z-index: 999;
 
     transition: 200ms ease-in;
@@ -309,6 +309,7 @@ main {
 
 .map iframe {
     width: 100%;
+    min-height: 500px;
 }
 
 .map .directions {
