@@ -92,6 +92,12 @@
                 <div class="img-grid">
                     <img src="./images/shelf-8.JPG" alt="shelf-8">
                 </div>
+                <div class="img-grid">
+                    <img src="./images/bag&hats.JPG" alt="bags&hats">
+                </div>
+                <div class="img-grid">
+                    <img src="./images/trays.JPG" alt="trays">
+                </div>
             </div>
             <div class="modal">
                 <div class="exit">
