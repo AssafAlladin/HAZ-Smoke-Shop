@@ -160,7 +160,7 @@ if(array_key_exists('submit', $_POST)) {
         <div class="top-section">
             <div class="address">
                 <p>5415 S Cooper St suit 101, Arlington, TX 76017</p>
-                <p>682-313-4203</p>
+                <p>817-583-6798</p>
                 <p>hazim.assaf@yahoo.com</p>
             </div>
             <a href="https://www.instagram.com/haz.smokevape/" target= "_blank">
